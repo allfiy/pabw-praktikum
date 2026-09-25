@@ -86,7 +86,7 @@ Tiga bagian semantik baru ditambahkan di dalam `<main>`, tepat sebelum tag penut
 
 ### 5. Pengungkapan Penggunaan AI (Lembar I.6)
 - **Dikerjakan Sendiri**: Perencanaan arah visual, penentuan skala token warna/spasi, penulisan struktur kerangka HTML `profil.html`, penyusunan bagian semantik tambahan (`<details>`, `<dl>`, `<ol>`), serta pengujian manual kontras warna dan aksesibilitas papan ketik.
-- **Dibantu AI**: Pengecekan sintaks CSS modern (seperti `:has()` dan `:user-invalid`), validasi kerapian dokumentasi README, serta verifikasi kelengkapan checklist rubrik praktikum.
+- **Dibantu AI**: Pengecekan sintaks CSS modern (seperti `:has()` dan `:user-invalid`), validasi kerapian dokumentasi README, serta verifikasi kelengkapan checklist rubrik praktikumdan beberapa pengejaan lain nya juga.
 
 ---
 
