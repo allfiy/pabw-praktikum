@@ -1,0 +1,167 @@
+/* ==========================================================================
+   KOMPONEN.CSS — Pertemuan 4 · CSS Fundamental & Design Token
+   ==========================================================================
+   Gaya form, keadaan fokus, isian tidak sah (:user-invalid), serta komponen
+   interaktif dan semantik tambahan (details, dl, ol.lini).
+   ========================================================================== */
+
+/* 1. Form & Fieldset */
+form fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--card-pad);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+form legend {
+  font-weight: 700;
+  font-size: var(--text-lg);
+  padding-inline: var(--space-2);
+  color: var(--color-primary);
+}
+
+form p {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: 0;
+}
+
+label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-fg);
+}
+
+input, select, textarea {
+  font: inherit;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-fg);
+  width: 100%;
+}
+
+button[type="submit"], button {
+  font: inherit;
+  font-weight: 600;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-surface);
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#nim-bantuan {
+  font-size: var(--text-sm);
+  color: var(--color-fg);
+  opacity: 0.8;
+}
+
+/* 2. Keadaan Fokus Aksesibilitas (:focus-visible) */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* 3. Keadaan Isian Tidak Sah (:user-invalid) */
+input:user-invalid, textarea:user-invalid {
+  border-color: var(--color-danger);
+  border-width: 2px;
+}
+
+/* 4. Komponen Tambahan 1: Tanya Jawab (<details> & <summary>) */
+#tanya-jawab details {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-3);
+  box-shadow: var(--shadow-1);
+}
+
+#tanya-jawab summary {
+  font-weight: 600;
+  font-size: var(--text-md);
+  cursor: pointer;
+  color: var(--color-primary);
+}
+
+#tanya-jawab summary:hover {
+  text-decoration: underline;
+}
+
+#tanya-jawab details[open] summary {
+  margin-bottom: var(--space-2);
+}
+
+#tanya-jawab details p {
+  color: var(--color-fg);
+  margin-bottom: 0;
+}
+
+/* 5. Komponen Tambahan 2: Keterampilan (<dl>, <dt>, <dd>) */
+#keterampilan dl.keterampilan {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--card-pad);
+  box-shadow: var(--shadow-1);
+}
+
+#keterampilan dt {
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: var(--text-md);
+}
+
+#keterampilan dd {
+  margin-left: var(--space-4);
+  color: var(--color-fg);
+}
+
+/* 6. Komponen Tambahan 3: Lini Masa (<ol.lini>, <time>) */
+#lini-masa ol.lini {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-left: var(--space-6);
+  border-left: 3px solid var(--color-primary);
+  list-style: none;
+  margin-left: var(--space-2);
+}
+
+#lini-masa ol.lini li {
+  position: relative;
+  color: var(--color-fg);
+}
+
+#lini-masa ol.lini li::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--space-6) - 5px);
+  top: 0.35rem;
+  width: 9px;
+  height: 9px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+}
+
+#lini-masa ol.lini time {
+  font-weight: 700;
+  color: var(--color-primary);
+}

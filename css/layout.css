@@ -1,0 +1,148 @@
+/* ==========================================================================
+   LAYOUT.CSS — Pertemuan 4 · CSS Fundamental & Design Token
+   ==========================================================================
+   Tata letak navbar, pembungkus bagian, katalog kartu, dan footer.
+   Menggunakan Flexbox dan gap (tanpa float).
+   ========================================================================== */
+
+/* Header & Navbar Flexbox */
+header.kepala {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  max-width: 64rem;
+  margin-inline: auto;
+}
+
+header.kepala .tagline {
+  width: 100%;
+  font-size: var(--text-sm);
+  color: var(--color-fg);
+  opacity: 0.85;
+  margin-bottom: 0;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+}
+
+nav a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--text-md);
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Wadah Utama (Main) */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+  padding-block: var(--space-6);
+  max-width: 64rem;
+  margin-inline: auto;
+}
+
+/* Section Profil & Foto */
+#tentang figure.foto {
+  max-width: 16rem;
+  margin-bottom: var(--space-4);
+}
+
+#tentang figure.foto img {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+  border: 1px solid var(--color-border);
+}
+
+#tentang figure.foto figcaption {
+  font-size: var(--text-sm);
+  color: var(--color-fg);
+  opacity: 0.8;
+  margin-top: var(--space-2);
+  font-style: italic;
+}
+
+/* Tabel Data Kegiatan */
+#tentang table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-4);
+  font-size: var(--text-md);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+}
+
+#tentang table caption {
+  font-weight: 700;
+  font-size: var(--text-lg);
+  text-align: left;
+  margin-bottom: var(--space-2);
+  color: var(--color-fg);
+  caption-side: top;
+}
+
+#tentang th, #tentang td {
+  padding: var(--space-3);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+#tentang thead th {
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-border);
+  font-weight: 700;
+}
+
+#tentang tbody tr:last-child th,
+#tentang tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Katalog Kartu Karya (Flexbox Wrap & Fluid Basis) */
+#karya ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+}
+
+#karya ul li {
+  flex: 1 1 16rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+  padding: var(--card-pad);
+  color: var(--color-fg);
+  font-weight: 500;
+}
+
+/* Footer */
+footer.kaki {
+  max-width: 64rem;
+  margin-inline: auto;
+  margin-top: var(--space-6);
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-fg);
+  font-size: var(--text-sm);
+  text-align: center;
+}
