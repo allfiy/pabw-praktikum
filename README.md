@@ -103,6 +103,294 @@ Tiga bagian semantik baru ditambahkan di dalam `<main>`, tepat sebelum tag penut
 
 4. **Apa yang terjadi bila `input:invalid` dipakai untuk memberi warna merah, dan mengapa `:user-invalid` lebih baik? Sebutkan saat keduanya menyala.**
    - `input:invalid` menyala langsung saat halaman pertama kali dibuka untuk semua kolom wajib yang masih kosong, sehingga formulir tampak merah sebelum pengguna mengetik apapun. `:user-invalid` lebih baik karena hanya menyala setelah pengguna berinteraksi (mengetik atau mencoba mengirimkan form) dan isinya tidak sah, sehingga tidak membingungkan pengguna.
+  
+   - 
 
 5. **Mengapa `gap` lebih baik daripada `margin` untuk jarak antar item di dalam flexbox?**
    - `gap` mengatur jarak antar item flex secara bersih tanpa menambah jarak di luar tepi wadah (tidak ada margin bocor) dan tidak mengalami masalah margin collapse. Selain itu, `gap` otomatis bekerja pada pembungkusan baris (`flex-wrap: wrap`) baik secara horizontal maupun vertikal.
+
+# P05 — JavaScript Modern dan Debugging
+
+**Mata Kuliah:** Pengembangan Aplikasi Berbasis Web (PABW)
+**Nama:** Alfia Syakira Al Amin
+**NIM:** 25523222
+**Pertemuan:** 5
+
+## Deskripsi
+
+Praktikum P05 membahas penggunaan fitur JavaScript modern dan proses debugging untuk memahami cara program dijalankan serta menemukan kesalahan pada kode.
+
+Melalui praktikum ini, saya mempelajari penggunaan variabel, fungsi, objek, array, array methods, serta pemanfaatan Console dan breakpoint untuk memeriksa jalannya program.
+
+## Tujuan Praktikum
+
+* Memahami penggunaan `const` dan `let`.
+* Memahami template literal dan operator modern JavaScript.
+* Menggunakan objek, array, dan fungsi.
+* Memahami penggunaan array methods seperti `map()`, `filter()`, dan `find()`.
+* Membaca pesan kesalahan pada Console.
+* Menggunakan breakpoint untuk memeriksa nilai variabel selama program berjalan.
+
+## Materi yang Dipelajari
+
+### 1. Variabel dan sintaks modern
+
+Penggunaan `const` dan `let` membantu mendeklarasikan variabel sesuai kebutuhan program.
+
+### 2. Objek dan array
+
+Objek digunakan untuk menyimpan data dalam bentuk pasangan properti dan nilai, sedangkan array digunakan untuk menyimpan kumpulan data.
+
+### 3. Array methods
+
+Beberapa metode yang dipelajari meliputi:
+
+* `map()` untuk menghasilkan array baru dari hasil pengolahan setiap elemen.
+* `filter()` untuk mengambil elemen yang memenuhi kondisi.
+* `find()` untuk mencari elemen pertama yang memenuhi kondisi.
+* `console.table()` untuk menampilkan data dalam bentuk tabel di Console.
+
+### 4. Debugging
+
+Debugging dilakukan dengan membaca pesan kesalahan di Console dan menggunakan breakpoint untuk menghentikan sementara program sehingga nilai variabel dapat diperiksa.
+
+## Struktur Berkas
+
+Struktur dasar folder yang perlu diperiksa:
+
+```text
+P05-25523222/
+├── README.md
+├── profil.html
+├── kerangka-profil.html
+├── css/
+└── media/
+```
+
+Sesuaikan struktur tersebut dengan berkas yang benar-benar ada di folder P05. Cantumkan file JavaScript hanya jika memang tersedia di folder tersebut.
+
+## Cara Menjalankan
+
+1. Buka folder P05 di Visual Studio Code.
+2. Buka halaman HTML yang digunakan untuk praktikum.
+3. Jalankan halaman melalui Live Server jika project menggunakan halaman web.
+4. Buka DevTools browser dengan menekan `F12`.
+5. Pilih tab Console untuk melihat keluaran program dan pesan kesalahan.
+6. Jika terdapat latihan debugging, gunakan breakpoint sesuai instruksi worksheet.
+
+## Pengujian
+
+Pemeriksaan dilakukan dengan menjalankan latihan JavaScript, mengamati keluaran program, dan memeriksa nilai variabel melalui debugger.
+
+Hasil akhir dicatat berdasarkan latihan yang benar-benar sudah dijalankan.
+
+## Kesimpulan
+
+Praktikum P05 membantu saya memahami fitur JavaScript modern serta pentingnya debugging untuk mengetahui penyebab kesalahan dan memahami alur eksekusi program.
+
+# P06 — Responsive Mobile-First
+
+## Identitas
+
+* **Nama:** Alfia Syakira Al Amin
+* **NIM:** 25523222
+* **Kelas:** E
+* **Mata Kuliah:** Pengembangan Aplikasi Berbasis Web (PABW)
+* **Pertemuan:** 6 — Responsive Mobile-First
+
+## Deskripsi
+
+P06 merupakan praktikum yang membahas penerapan desain web responsif menggunakan CSS dengan pendekatan **Mobile-First**. Halaman profil dikembangkan agar dapat menyesuaikan tampilan berdasarkan ukuran layar perangkat, mulai dari ponsel hingga desktop.
+
+## Tujuan Praktikum
+
+1. Memahami konsep desain responsif dan pendekatan Mobile-First.
+2. Membuat tampilan dasar untuk layar berukuran kecil.
+3. Menggunakan media query untuk menyesuaikan tata letak pada layar yang lebih besar.
+4. Menguji tampilan halaman pada beberapa ukuran layar.
+
+## Implementasi
+
+Pada praktikum ini, beberapa hal yang diterapkan adalah:
+
+* **Mobile-First:** Tampilan dasar dibuat untuk perangkat dengan layar kecil terlebih dahulu.
+* **Media Query:** Digunakan untuk mengatur perubahan tata letak berdasarkan lebar layar.
+* **Responsive Layout:** Tata letak halaman disesuaikan agar tetap nyaman digunakan pada berbagai perangkat.
+* **Viewport:** Menggunakan meta viewport agar halaman ditampilkan sesuai ukuran layar perangkat.
+* **Pengujian Responsif:** Tampilan diperiksa pada lebar layar 360 px, 768 px, dan 1280 px.
+
+## Struktur Folder
+
+```text
+P06-25523222/
+├── README.md
+├── kerangka-profil.html
+├── profil.html
+├── css/
+│   ├── tokens.css
+│   ├── base.css
+│   ├── layout.css
+│   ├── responsif.css
+│   ├── komponen.css
+│   └── tema.css
+└── media/
+    └── foto-profil.jpg
+```
+
+## Kesimpulan
+
+Melalui praktikum P06, saya mempelajari cara membuat halaman web yang responsif menggunakan CSS dan pendekatan Mobile-First. Dengan menggunakan media query dan menguji beberapa ukuran layar, tampilan halaman dapat menyesuaikan perangkat yang digunakan.
+
+# P08 — JavaScript pada Halaman Profil
+
+**Mata Kuliah:** Pengembangan Aplikasi Berbasis Web (PABW)
+**Nama:** Alfia Syakira Al Amin
+**NIM:** 25523222
+**Pertemuan:** 8
+
+## Deskripsi
+
+Praktikum P08 merupakan bagian dari pengembangan halaman profil web dengan JavaScript. Praktikum ini melanjutkan penggunaan HTML dan CSS dengan menambahkan atau menghubungkan kode JavaScript sesuai materi pertemuan.
+
+JavaScript digunakan untuk menjalankan logika program pada halaman web. Struktur kode disesuaikan dengan kebutuhan praktikum dan berkas yang tersedia di dalam project.
+
+## Tujuan Praktikum
+
+* Memahami cara menghubungkan JavaScript dengan halaman HTML.
+* Memahami penggunaan sintaks JavaScript yang dipelajari pada pertemuan ini.
+* Mengorganisasi kode JavaScript sesuai struktur project.
+* Memeriksa hasil eksekusi JavaScript melalui browser dan Console.
+
+## Implementasi
+
+Halaman profil menjadi bagian dari project praktikum. Implementasi JavaScript mengikuti kode yang tersedia di folder P08.
+
+Bagian yang perlu diperiksa dan dijelaskan berdasarkan implementasi aktual:
+
+1. **Penghubung JavaScript** — cara file JavaScript dipanggil dari HTML.
+2. **Struktur kode** — pembagian kode ke dalam file sesuai kebutuhan praktikum.
+3. **Pengolahan data** — apabila terdapat objek, array, atau array methods, jelaskan penggunaannya sesuai kode.
+4. **Pemeriksaan hasil** — menggunakan browser dan Console untuk memastikan kode berjalan.
+
+## Struktur Berkas
+
+```text
+P08-25523222/
+├── README.md
+├── profil.html
+├── kerangka-profil.html
+├── css/
+└── Js/
+```
+
+Struktur di atas merupakan gambaran awal berdasarkan project profil yang digunakan pada praktikum sebelumnya. Periksa isi folder P08 dan sesuaikan nama serta daftar file dengan struktur yang benar-benar tersedia.
+
+## Cara Menjalankan
+
+1. Buka folder `P08-25523222` di Visual Studio Code.
+2. Buka file HTML utama yang digunakan dalam praktikum.
+3. Jalankan menggunakan Live Server apabila project memerlukannya.
+4. Buka DevTools browser dengan menekan `F12`.
+5. Periksa tab Console untuk melihat keluaran atau pesan kesalahan JavaScript.
+
+## Pengujian
+
+Pengujian dilakukan dengan membuka halaman praktikum dan memeriksa apakah kode JavaScript berjalan sesuai instruksi worksheet.
+
+Tuliskan hasil pengujian berdasarkan perilaku halaman dan keluaran Console yang benar-benar diamati.
+
+## Kesimpulan
+
+Melalui praktikum P08, saya mempelajari penerapan JavaScript pada project web dan pentingnya memastikan kode terhubung dengan halaman HTML serta berjalan sesuai tujuan praktikum.
+
+# P09 — DOM, Event, dan Interaktivitas
+
+**Mata Kuliah:** Pengembangan Aplikasi Berbasis Web (PABW)
+**Nama:** Alfia Syakira Al Amin
+**NIM:** 25523222
+**Pertemuan:** 9
+
+## Deskripsi
+
+Praktikum P09 membahas Document Object Model (DOM), event, dan interaktivitas pada halaman web. Pada praktikum ini, JavaScript digunakan untuk memilih elemen HTML, membentuk daftar karya dari data, menerapkan filter kategori, serta memvalidasi formulir.
+
+## Tujuan Praktikum
+
+* Mengambil elemen HTML menggunakan DOM selector.
+* Membuat dan memperbarui elemen HTML melalui JavaScript.
+* Menggunakan event listener untuk menangani interaksi pengguna.
+* Memahami event delegation pada tombol filter.
+* Menampilkan pesan ketika hasil penyaringan kosong.
+* Memvalidasi isian formulir.
+* Menggunakan DevTools untuk memeriksa dan memperbaiki masalah.
+
+## Fitur yang Diterapkan
+
+### 1. DOM selector
+
+Elemen HTML diambil menggunakan metode seperti `document.querySelector()` dan `document.querySelectorAll()`.
+
+### 2. Render daftar karya
+
+Data karya disimpan dalam array dan ditampilkan ke halaman menggunakan `createElement()`, `textContent`, serta fungsi `render()`.
+
+### 3. Filter kategori
+
+Pengguna dapat memilih kategori Semua, HTML, UI/UX, dan CSS. Filter menggunakan event delegation sehingga pendengar klik dipasang pada elemen induk.
+
+### 4. Keadaan kosong
+
+Pesan keadaan kosong ditampilkan ketika tidak ada karya yang cocok dengan kategori yang dipilih.
+
+### 5. Validasi formulir
+
+Formulir kontak memeriksa isian seperti nama, email, NIM, dan pesan. JavaScript digunakan untuk menampilkan pesan kesalahan dan mencegah pengiriman formulir ketika isian belum valid.
+
+### 6. Debugging dengan DevTools
+
+Console dan Event Listeners digunakan untuk memeriksa elemen, event, serta gejala ketika halaman tidak bereaksi sesuai harapan.
+
+## Struktur Berkas
+
+```text
+P09-25523222/
+├── README.md
+├── profil.html
+├── css/
+│   ├── base.css
+│   ├── komponen.css
+│   ├── layout.css
+│   ├── responsif.css
+│   ├── tema.css
+│   └── tokens.css
+└── Js/
+    ├── app.js
+    └── dom.js
+```
+
+Struktur tersebut mengikuti berkas yang digunakan dalam project. Jika ada perbedaan pada folder aktual, sesuaikan daftar di atas.
+
+## Cara Menjalankan
+
+1. Buka folder `P09-25523222` di Visual Studio Code.
+2. Jalankan `profil.html` menggunakan Live Server.
+3. Buka bagian Karya dan pilih kategori Semua, HTML, UI/UX, atau CSS.
+4. Pastikan daftar karya berubah sesuai kategori.
+5. Uji formulir dengan mengosongkan kolom dan memasukkan data yang sesuai.
+6. Buka DevTools menggunakan `F12` untuk memeriksa Console dan Event Listeners.
+
+## Pengujian
+
+Pengujian dilakukan dengan memeriksa DOM selector, mencoba tombol filter, mengamati keadaan kosong, dan menguji validasi formulir.
+
+Hasil pengujian akhir perlu disesuaikan dengan kondisi project yang benar-benar dijalankan.
+
+## Deklarasi Penggunaan AI
+
+Dalam pengerjaan P09, saya menggunakan bantuan AI untuk memahami konsep DOM, selector, render data, event delegation, validasi formulir, serta proses debugging.
+
+Saya memeriksa dan menyesuaikan saran yang diberikan dengan project saya. Bagian yang dikerjakan secara mandiri dan hasil pengujian yang dicantumkan harus sesuai dengan pekerjaan yang benar-benar saya lakukan dan pahami.
+
+## Kesimpulan
+
+Praktikum P09 membantu saya memahami cara JavaScript berinteraksi dengan elemen HTML, mengolah data menjadi tampilan, menangani event, serta memvalidasi masukan pengguna. Saya juga belajar menggunakan DevTools untuk menemukan penyebab masalah sebelum melakukan perubahan kode.
