@@ -1,19 +1,44 @@
+import { karya } from "./app.js";
 
 const wadah = document.querySelector("#daftar");
+const pesanKosong = document.querySelector("#pesan-kosong");
 const barisFilter = document.querySelector("#filter");
-const kosong = document.querySelector("#pesan-kosong");
 
-const form = document.querySelector("#kontak form");
-const nama = document.querySelector("#nama");
-const email = document.querySelector("#email");
-const nim = document.querySelector("#nim");
-const pesan = document.querySelector("#pesan");
+function buatKartu(item) {
+  const kartu = document.createElement("li");
+  kartu.textContent = `${item.judul} (${item.tahun}) — ${item.kategori}`;
+  return kartu;
+}
 
-console.log("Daftar proyek:", wadah);
-console.log("Tombol filter:", barisFilter);
-console.log("Pesan kosong:", kosong);
-console.log("Form kontak:", form);
-console.log("Kolom nama:", nama);
-console.log("Kolom email:", email);
-console.log("Kolom NIM:", nim);
-console.log("Kolom pesan:", pesan);
+function renderKarya(kategori = "semua") {
+  wadah.textContent = "";
+
+  const hasilFilter =
+    kategori === "semua"
+      ? karya
+      : karya.filter(
+          (item) => item.kategori.toLowerCase() === kategori
+        );
+
+  hasilFilter.forEach((item) => {
+    wadah.append(buatKartu(item));
+  });
+
+  pesanKosong.hidden = hasilFilter.length > 0;
+}
+
+barisFilter.addEventListener("click", (event) => {
+  const tombol = event.target.closest("button[data-kategori]");
+
+  if (!tombol) return;
+
+  const kategori = tombol.dataset.kategori;
+
+  barisFilter.querySelectorAll("button").forEach((item) => {
+    item.classList.toggle("aktif", item === tombol);
+  });
+
+  renderKarya(kategori);
+});
+
+renderKarya();

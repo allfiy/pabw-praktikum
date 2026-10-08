@@ -53,7 +53,7 @@ const daftarKeahlian = [
 
 console.log(formatKeahlian(daftarKeahlian));
 
-   const karya = [
+   export const karya = [
     
   {
     judul: "Halaman Kelas Terbuka Kampus",
