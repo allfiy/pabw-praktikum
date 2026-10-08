@@ -1,214 +1,269 @@
-<!DOCTYPE html> 
-<!-- 
-  KERANGKA PROFIL — PABW 2026/2027 — Pertemuan 4 
-  Halaman profil Alfia Syakira Al Amin (NIM: 25523222, Kelas E). 
-  Telah dilengkapi dengan CSS Design Token (dua lapis), layout flexbox, 
-  keadaan fokus & form invalid, tema gelap tanpa JS, serta 3 struktur semantik tambahan. 
---> 
-<html lang="id"> 
-<head> 
-  <meta charset="utf-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1"> 
-  <meta name="color-scheme" content="light dark"> 
+```html
+<!DOCTYPE html>
+<!--
+  PROFIL — PABW 2026/2027 — P09
+  Halaman profil Alfia Syakira Al Amin.
+  DOM, event delegation, render karya, dan validasi form.
+-->
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
 
-  <!-- ISI 1 — judul tab dan hasil pencarian --> 
-  <title>Profil Alfi— PABW 2026/2027</title> 
-  <meta name="description" content="Halaman profil mahasiswa PABW: tentang saya, karya, dan kontak."> 
- 
-  <!-- LEMBAR D — lima berkas CSS dalam urutan pemuatan cascade --> 
-  <link rel="stylesheet" href="css/tokens.css"> 
-  <link rel="stylesheet" href="css/base.css"> 
-  <link rel="stylesheet" href="css/layout.css"> 
-  <link rel="stylesheet" href="css/responsif.css"> 
-  <link rel="stylesheet" href="css/komponen.css"> 
-  <link rel="stylesheet" href="css/tema.css"> 
-</head> 
+  <title>Profil Alfi — PABW 2026/2027</title>
+  <meta name="description" content="Halaman profil mahasiswa PABW: tentang saya, karya, dan kontak.">
 
-<body> 
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/responsif.css">
+  <link rel="stylesheet" href="css/komponen.css">
+  <link rel="stylesheet" href="css/tema.css">
+</head>
 
-  <a class="lewati" href="#utama">Lewati ke konten utama</a> 
- 
-  <header class="kepala"> 
-   
-    <!-- ISI 2 — nama lengkap --> 
-    <h1>Alfia Syakira Al Amin</h1> 
+<body>
 
-    <!-- ISI 3 — tagline --> 
-    <p class="tagline">Mahasiswa Informatika yang sedang belajar membangun web.</p> 
+  <a class="lewati" href="#utama">Lewati ke konten utama</a>
 
-    <nav aria-label="Navigasi utama"> 
-      <ul> 
-        <li><a href="#tentang">Tentang</a></li> 
-        <li><a href="#karya">Karya</a></li> 
-        <li><a href="#kontak">Kontak</a></li> 
-        <li><a href="#tanya-jawab">FAQ</a></li> 
-        <li><a href="#keterampilan">Keterampilan</a></li> 
-        <li><a href="#lini-masa">Lini Masa</a></li> 
-      </ul> 
-    </nav> 
-  </header> 
- 
-  <main id="utama"> 
- 
-    <section id="tentang"> 
-      <h2>Tentang saya</h2> 
- 
-      <figure class="foto"> 
-        <!-- ISI 4 — foto profil --> 
-        <img src="media/foto-profil.jpg" 
-             alt="Foto diri Alfia Syakira Al Amin memakai kemeja putih." 
-             width="480" height="480" loading="lazy"> 
-        <figcaption>Foto profil Alfi.</figcaption> 
-      </figure> 
- 
-      <!-- ISI 5 — deskripsi diri --> 
-      <p>Saya mahasiswa Program Studi Informatika Universitas Islam Indonesia. 
-         Saya tertarik pada pengembangan web, khususnya bagian tampilan antarmuka dan pengalaman pengguna (UI/UX). 
-         Saya sedang mempelajari CSS fundamental dan design token untuk membangun halaman web yang konsisten, responsif, dan mudah dirawat.</p> 
- 
-      <!-- D.1 dan D.2 — tabel responsif -->
-      <div class="table-wrap"> 
-        <table> 
-          <!-- ISI 6 — tabel kegiatan --> 
-          <caption>Kegiatan yang saya ikuti semester ini</caption> 
-          <thead> 
-            <tr> 
-              <th scope="col">Kegiatan</th> 
-              <th scope="col">Peran</th> 
-              <th scope="col">Waktu</th> 
-            </tr> 
-          </thead> 
- 
-          <tbody> 
-            <tr> 
-              <th scope="row">Praktikum PABW</th> 
-              <td>Peserta</td> 
-              <td><time datetime="2026-09">September 2026</time></td> 
-            </tr> 
+  <header class="kepala">
+    <h1>Alfia Syakira Al Amin</h1>
 
-            <tr> 
-              <th scope="row">Volunteer UI/UX Design</th> 
-              <td>Peserta</td> 
-              <td><time datetime="2026-09">September 2026</time></td> 
-            </tr> 
+    <p class="tagline">
+      Mahasiswa Informatika yang sedang belajar membangun web.
+    </p>
 
-            <tr> 
-              <th scope="row">Organisasi Kemahasiswaan</th> 
-              <td>Anggota aktif</td> 
-              <td><time datetime="2026">2026</time></td> 
-            </tr> 
-          </tbody> 
-        </table> 
+    <nav aria-label="Navigasi utama">
+      <ul>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#karya">Karya</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+        <li><a href="#tanya-jawab">FAQ</a></li>
+        <li><a href="#keterampilan">Keterampilan</a></li>
+        <li><a href="#lini-masa">Lini Masa</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="utama">
+
+    <section id="tentang">
+      <h2>Tentang saya</h2>
+
+      <figure class="foto">
+        <img
+          src="media/foto-profil.jpg"
+          alt="Foto diri Alfia Syakira Al Amin memakai kemeja putih."
+          width="480"
+          height="480"
+          loading="lazy"
+        >
+        <figcaption>Foto profil Alfi.</figcaption>
+      </figure>
+
+      <p>
+        Saya mahasiswa Program Studi Informatika Universitas Islam Indonesia.
+        Saya tertarik pada pengembangan web, khususnya bagian tampilan
+        antarmuka dan pengalaman pengguna (UI/UX). Saya sedang mempelajari
+        CSS fundamental dan design token untuk membangun halaman web yang
+        konsisten, responsif, dan mudah dirawat.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Kegiatan yang saya ikuti semester ini</caption>
+
+          <thead>
+            <tr>
+              <th scope="col">Kegiatan</th>
+              <th scope="col">Peran</th>
+              <th scope="col">Waktu</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th scope="row">Praktikum PABW</th>
+              <td>Peserta</td>
+              <td><time datetime="2026-09">September 2026</time></td>
+            </tr>
+
+            <tr>
+              <th scope="row">Volunteer UI/UX Design</th>
+              <td>Peserta</td>
+              <td><time datetime="2026-09">September 2026</time></td>
+            </tr>
+
+            <tr>
+              <th scope="row">Organisasi Kemahasiswaan</th>
+              <td>Anggota aktif</td>
+              <td><time datetime="2026">2026</time></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
- 
-    </section> 
+    </section>
 
     <section id="karya">
       <h2>Karya saya</h2>
 
-    <div id="filter">
-      <button type="button" data-kategori="semua" class="aktif">Semua</button>
-      <button type="button" data-kategori="html">HTML</button>
-      <button type="button" data-kategori="ui/ux">UI/UX</button>
-      <button type="button" data-kategori="css">CSS</button>
-    </div>
+      <div id="filter">
+        <button type="button" data-kategori="semua" class="aktif">
+          Semua
+        </button>
+        <button type="button" data-kategori="html">HTML</button>
+        <button type="button" data-kategori="ui/ux">UI/UX</button>
+        <button type="button" data-kategori="css">CSS</button>
+      </div>
 
-    <ul id="daftar"></ul>
+      <ul id="daftar"></ul>
 
-    <p id="pesan-kosong" hidden>
-      Tidak ada karya pada kategori itu.
-    </p>
+      <p id="pesan-kosong" hidden>
+        Tidak ada karya pada kategori itu.
+      </p>
     </section>
- 
-    <section id="kontak"> 
-      <h2>Hubungi saya</h2> 
-      <p>Isi formulir berikut. Semua kolom bertanda wajib harus diisi.</p> 
- 
-      <form action="#" method="post"> 
-        <fieldset> 
-          <legend>Data pengirim</legend> 
- 
-          <p> 
-            <label for="nama">Nama lengkap</label> 
-            <input id="nama" name="nama" type="text" 
-                   autocomplete="name" required> 
-          </p> 
- 
-          <p> 
-            <label for="email">Email</label> 
-            <input id="email" name="email" type="email" 
-                   autocomplete="email" required> 
-          </p> 
- 
-          <p> 
-            <label for="nim">NIM</label> 
-            <!-- ISI 8 — pattern NIM --> 
-            <input id="nim" name="nim" type="text" inputmode="numeric" 
-                   pattern="[0-9]{8}" aria-describedby="nim-bantuan" required> 
-            <span id="nim-bantuan">Delapan digit angka, contoh 25523222.</span> 
-          </p> 
- 
-          <p> 
-            <label for="pesan">Pesan</label> 
-            <textarea id="pesan" name="pesan" rows="4" required></textarea> 
-          </p> 
- 
-          <button type="submit">Kirim</button> 
-        </fieldset> 
-      </form> 
-    </section> 
- 
-    <!-- STRUKTUR TAMBAHAN (Lembar B.3) — 3 bagian baru semantik --> 
- 
-    <section id="tanya-jawab"> 
-      <h2>Tanya jawab</h2> 
 
-      <details> 
-        <summary>Apa fokus keahlian yang sedang saya pelajari?</summary> 
-        <p>Saat ini saya berfokus pada pengembangan front-end web, khususnya penerapan CSS fundamental, flexbox, design token, dan aksesibilitas web.</p> 
-      </details> 
+    <section id="kontak">
+      <h2>Hubungi saya</h2>
 
-      <details> 
-        <summary>Alat apa yang saya gunakan sehari-hari?</summary> 
-        <p>Saya menggunakan VS Code sebagai editor kode dan Google Chrome DevTools untuk pengujian tata letak, kontras warna, serta aksesibilitas.</p> 
-      </details> 
+      <p>Isi formulir berikut. Semua kolom wajib diisi.</p>
 
-    </section> 
- 
-    <section id="keterampilan"> 
-      <h2>Keterampilan utama</h2> 
+      <!-- novalidate membuat validasi ditangani oleh JavaScript -->
+      <form action="#" method="post" novalidate>
+        <fieldset>
+          <legend>Data pengirim</legend>
 
-      <dl class="keterampilan"> 
-        <dt>HTML5 Semantik</dt> 
-        <dd>Penerapan landmark semantik, struktur dokumen bersih, heading berurutan, dan pengujian validator W3C.</dd> 
+          <p>
+            <label for="nama">Nama lengkap</label>
+            <input
+              id="nama"
+              name="nama"
+              type="text"
+              autocomplete="name"
+              required
+            >
+          </p>
 
-        <dt>CSS Fundamental &amp; Design Token</dt> 
-        <dd>Pengelolaan sistem warna dua lapis, flexbox layout, responsivitas fluid, dan tema gelap tanpa JavaScript.</dd> 
+          <p>
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+            >
+          </p>
 
-        <dt>Pengontrol Versi (Git)</dt> 
-        <dd>Penggunaan alur kerja Git dasar seperti commit, push ke GitHub, serta manajemen repositori proyek.</dd> 
-      </dl> 
-    </section> 
- 
-    <section id="lini-masa"> 
-      <h2>Lini masa perjalanan</h2> 
+          <p>
+            <label for="nim">NIM</label>
+            <input
+              id="nim"
+              name="nim"
+              type="text"
+              inputmode="numeric"
+              pattern="[0-9]{8}"
+              aria-describedby="nim-bantuan"
+              required
+            >
+            <span id="nim-bantuan">
+              Delapan digit angka, contoh 25523222.
+            </span>
+          </p>
 
-      <ol class="lini"> 
-        <li><time datetime="2025-08">Agustus 2025</time> — Memulai studi di Program Studi Informatika Universitas Islam Indonesia.</li> 
-        <li><time datetime="2025-02">Februari 2025</time> — Mempelajari dasar-dasar algoritma, pemrograman, dan desain antarmuka.</li> 
-        <li><time datetime="2026-09">September 2026</time> — Mengembangkan halaman profil portofolio interaktif berbasis design token.</li> 
-      </ol> 
-    </section> 
- 
-  </main> 
- 
-  <footer class="kaki"> 
-    <!-- ISI 9 — nama, NIM, tahun --> 
-    <p>Alfia Syakira Al Amin · 25523222 · <time datetime="2026">2026</time></p> 
-  </footer> 
-  
-  
-  <script type="module" src="js/app.js"></script>
-  <script type="module" src="js/dom.js"></script>
-  </body>
+          <p>
+            <label for="pesan">Pesan</label>
+            <textarea
+              id="pesan"
+              name="pesan"
+              rows="4"
+              required
+            ></textarea>
+          </p>
+
+          <button type="submit">Kirim</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="tanya-jawab">
+      <h2>Tanya jawab</h2>
+
+      <details>
+        <summary>Apa fokus keahlian yang sedang saya pelajari?</summary>
+        <p>
+          Saat ini saya berfokus pada pengembangan front-end web,
+          khususnya penerapan CSS fundamental, flexbox, design token,
+          dan aksesibilitas web.
+        </p>
+      </details>
+
+      <details>
+        <summary>Alat apa yang saya gunakan sehari-hari?</summary>
+        <p>
+          Saya menggunakan VS Code sebagai editor kode dan Google Chrome
+          DevTools untuk pengujian tata letak, kontras warna, serta
+          aksesibilitas.
+        </p>
+      </details>
+    </section>
+
+    <section id="keterampilan">
+      <h2>Keterampilan utama</h2>
+
+      <dl class="keterampilan">
+        <dt>HTML5 Semantik</dt>
+        <dd>
+          Penerapan landmark semantik, struktur dokumen bersih,
+          heading berurutan, dan pengujian validator W3C.
+        </dd>
+
+        <dt>CSS Fundamental &amp; Design Token</dt>
+        <dd>
+          Pengelolaan sistem warna dua lapis, flexbox layout,
+          responsivitas fluid, dan tema gelap tanpa JavaScript.
+        </dd>
+
+        <dt>Pengontrol Versi (Git)</dt>
+        <dd>
+          Penggunaan alur kerja Git dasar seperti commit, push ke GitHub,
+          serta manajemen repositori proyek.
+        </dd>
+      </dl>
+    </section>
+
+    <section id="lini-masa">
+      <h2>Lini masa perjalanan</h2>
+
+      <ol class="lini">
+        <li>
+          <time datetime="2025-08">Agustus 2025</time> —
+          Memulai studi di Program Studi Informatika Universitas Islam Indonesia.
+        </li>
+        <li>
+          <time datetime="2025-02">Februari 2025</time> —
+          Mempelajari dasar-dasar algoritma, pemrograman, dan desain antarmuka.
+        </li>
+        <li>
+          <time datetime="2026-09">September 2026</time> —
+          Mengembangkan halaman profil portofolio interaktif berbasis design token.
+        </li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer class="kaki">
+    <p>
+      Alfia Syakira Al Amin · 25523222 ·
+      <time datetime="2026">2026</time>
+    </p>
+  </footer>
+
+  <!-- JavaScript P09 -->
+  <script type="module" src="Js/app.js"></script>
+  <script type="module" src="Js/dom.js"></script>
+
+</body>
 </html>
+```

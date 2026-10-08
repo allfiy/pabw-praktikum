@@ -184,3 +184,20 @@ textarea:user-invalid {
   outline: 2px solid currentColor;
   outline-offset: 2px;
 }
+
+
+.pesan-error {
+  display: block;
+  color: #b42318;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+[aria-invalid="true"] {
+  outline: 2px solid #b42318;
+  outline-offset: 2px;
+}
+
+.pesan-error[hidden] {
+  display: none;
+}
