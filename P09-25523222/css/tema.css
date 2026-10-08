@@ -1,0 +1,68 @@
+/* ==========================================================================
+   TEMA.CSS — Pertemuan 4 · CSS Fundamental & Design Token
+   ==========================================================================
+   Pengaturan tema gelap otomatis (prefers-color-scheme) dan manual switcher.
+   Hanya mengganti nilai lapis semantik, tanpa menyentuh lapis primitif.
+   ========================================================================== */
+
+/* 1. Pengalih Tema Manual (Styling Input & Label) */
+.pengalih-tema {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tombol-tema {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  color: var(--color-fg);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: var(--shadow-1);
+}
+
+.tombol-tema::before {
+  content: "🌙";
+}
+
+/* 2. Tema Gelap Otomatis dari Sistem Pengguna */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg:      var(--slate-900);
+    --color-fg:      var(--slate-100);
+    --color-surface: var(--slate-800);
+    --color-border:  var(--slate-700);
+    --color-primary: var(--blue-300);  /* Warna terang untuk kontras AA di tema gelap */
+    --color-danger:  var(--red-400);
+    --color-focus:   var(--amber-400);
+    --shadow-1:      0 1px 3px rgba(0, 0, 0, 0.45);
+  }
+
+  .tombol-tema::before {
+    content: "☀️";
+  }
+}
+
+/* 3. Pengalih Tema Manual Menimpa Sistem (:root:has(#tema:checked)) */
+/* Ditulis SETELAH @media query agar memiliki spesifisitas/menang dalam cascade */
+:root:has(#tema:checked) {
+  --color-bg:      var(--slate-900);
+  --color-fg:      var(--slate-100);
+  --color-surface: var(--slate-800);
+  --color-border:  var(--slate-700);
+  --color-primary: var(--blue-300);
+  --color-danger:  var(--red-400);
+  --color-focus:   var(--amber-400);
+  --shadow-1:      0 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+:root:has(#tema:checked) .tombol-tema::before {
+  content: "☀️";
+}
