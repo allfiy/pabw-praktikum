@@ -179,3 +179,8 @@ textarea:user-invalid {
   font-weight: 700;
   color: var(--color-primary);
 }
+
+#filter button.aktif {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}

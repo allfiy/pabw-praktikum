@@ -1,44 +1,50 @@
+
 import { karya } from "./app.js";
 
 const wadah = document.querySelector("#daftar");
 const pesanKosong = document.querySelector("#pesan-kosong");
 const barisFilter = document.querySelector("#filter");
 
-function buatKartu(item) {
+function buatKartu(proyek) {
   const kartu = document.createElement("li");
-  kartu.textContent = `${item.judul} (${item.tahun}) — ${item.kategori}`;
+  kartu.className = "kartu";
+  kartu.textContent =
+    `${proyek.judul} (${proyek.tahun}) — ${proyek.kategori}`;
+
   return kartu;
 }
 
-function renderKarya(kategori = "semua") {
-  wadah.textContent = "";
+function render(daftarProyek) {
+  wadah.replaceChildren();
 
-  const hasilFilter =
-    kategori === "semua"
-      ? karya
-      : karya.filter(
-          (item) => item.kategori.toLowerCase() === kategori
-        );
-
-  hasilFilter.forEach((item) => {
-    wadah.append(buatKartu(item));
+  daftarProyek.forEach((proyek) => {
+    wadah.append(buatKartu(proyek));
   });
 
-  pesanKosong.hidden = hasilFilter.length > 0;
+  pesanKosong.hidden = daftarProyek.length > 0;
+}
+
+function tandaiTombolAktif(tombolAktif) {
+  document.querySelectorAll("#filter button").forEach((tombol) => {
+    tombol.classList.toggle("aktif", tombol === tombolAktif);
+  });
 }
 
 barisFilter.addEventListener("click", (event) => {
   const tombol = event.target.closest("button[data-kategori]");
 
-  if (!tombol) return;
+  if (!tombol || !barisFilter.contains(tombol)) return;
 
   const kategori = tombol.dataset.kategori;
 
-  barisFilter.querySelectorAll("button").forEach((item) => {
-    item.classList.toggle("aktif", item === tombol);
-  });
+  const terpilih = karya.filter(
+    (proyek) =>
+      kategori === "semua" ||
+      proyek.kategori.toLowerCase() === kategori.toLowerCase()
+  );
 
-  renderKarya(kategori);
+  tandaiTombolAktif(tombol);
+  render(terpilih);
 });
 
-renderKarya();
+render(karya);
