@@ -111,3 +111,52 @@ function perkenalan(nama, peran) {
 console.log(perkenalan(nama, "Mahasiswa Informatika"));
 
 console.log(formatKeahlian(daftarKeahlian));
+
+import { ambilNotisia } from "./api.js";
+
+// Mengambil elemen HTML untuk menampilkan data API
+const wadahApi = document.querySelector("#daftar-api");
+const statusApi = document.querySelector("#status-api");
+
+// Menampilkan data dari API ke halaman
+async function tampilkanDataApi() {
+  if (!wadahApi || !statusApi) {
+    console.error("Elemen HTML untuk API tidak ditemukan.");
+    return;
+  }
+
+  statusApi.textContent = "Memuat data...";
+  wadahApi.textContent = "";
+
+  try {
+    const data = await ambilNotisia();
+
+    wadahApi.textContent = "";
+
+    if (data.length === 0) {
+      statusApi.textContent = "Belum ada postingan.";
+      return;
+    }
+
+    data.slice(0, 10).forEach((post) => {
+      const kartu = document.createElement("article");
+      const judul = document.createElement("h3");
+      const isi = document.createElement("p");
+
+      judul.textContent = "Postingan " + post.id;
+      isi.textContent = "Ini adalah contoh isi postingan nomor " + post.id + ".";
+
+      kartu.append(judul, isi);
+      wadahApi.append(kartu);
+    });
+
+    statusApi.textContent = "Data berhasil dimuat.";
+  } catch (galat) {
+    statusApi.textContent =
+      "Gagal memuat data: " + galat.message;
+
+    console.error("Terjadi kesalahan:", galat);
+  }
+}
+
+tampilkanDataApi();

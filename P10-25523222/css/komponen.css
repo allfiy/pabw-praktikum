@@ -201,3 +201,50 @@ textarea:user-invalid {
 .pesan-error[hidden] {
   display: none;
 }
+
+/* Tampilan data dari API */
+#bagian-api {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--warna-border, #334155);
+  border-radius: 12px;
+}
+
+#bagian-api > h2 {
+  margin-top: 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--warna-aksen, #93c5fd);
+}
+
+#status-api {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+#daftar-api {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 1rem;
+}
+
+#daftar-api article {
+  padding: 1rem;
+  border: 1px solid var(--warna-border, #334155);
+  border-radius: 10px;
+  background: var(--warna-kartu, #172033);
+  overflow-wrap: anywhere;
+}
+
+#daftar-api article h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+#daftar-api article p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
