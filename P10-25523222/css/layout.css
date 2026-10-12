@@ -63,18 +63,32 @@ main > details {
   overflow-wrap: anywhere;
 }
 
-/* Foto */
+/* Foto profil berbentuk kotak */
 .foto {
   width: 100%;
-  max-width: 480px;
-  margin: 0;
+  max-width: 220px;
+  margin: 0 auto var(--space-4);
 }
 
 .foto img {
-  width: 100%;
-  max-width: 480px;
-  height: auto;
+  display: block;
+  width: 220px;
+  height: 220px;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  border-radius: var(--radius-md);
 }
+
+/* Keterangan foto */
+.foto figcaption {
+  margin-top: var(--space-2);
+  text-align: center;
+  font-size: var(--text-sm);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
 
 /* Timeline */
 .timeline {
@@ -119,4 +133,24 @@ td {
   align-items: center;
   padding: var(--space-lg);
   text-align: center;
+}
+
+/* Foto */
+.foto {
+  width: 100%;
+  max-width: 480px;
+  margin: 0;
+}
+
+.foto img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+}
+
+/* Paragraf setelah foto melebar */
+#tentang > p {
+  max-width: 100%;
+  width: 100%;
+  margin-top: var(--space-4);
 }
