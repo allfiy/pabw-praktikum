@@ -129,7 +129,7 @@ async function tampilkanDataApi() {
   wadahApi.textContent = "";
 
   try {
-    const data = await ambilNotisia();
+    const data = [];
 
     wadahApi.textContent = "";
 
