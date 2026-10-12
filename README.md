@@ -394,3 +394,95 @@ Saya memeriksa dan menyesuaikan saran yang diberikan dengan project saya. Bagian
 ## Kesimpulan
 
 Praktikum P09 membantu saya memahami cara JavaScript berinteraksi dengan elemen HTML, mengolah data menjadi tampilan, menangani event, serta memvalidasi masukan pengguna. Saya juga belajar menggunakan DevTools untuk menemukan penyebab masalah sebelum melakukan perubahan kode.
+
+# P10 — Pengambilan Data dari API
+
+## Identitas
+
+- **Nama:** Alfia Syakira Al Amin
+- **NIM:** 25523222
+- **Kelas:** E
+- **Mata Kuliah:** Pengembangan Aplikasi Berbasis Web (PABW)
+- **Pertemuan:** 10 — Pengambilan Data dari API
+
+## Deskripsi
+
+Praktikum ini membahas cara mengambil data dari API menggunakan JavaScript modern. Data diambil menggunakan `fetch()`, diperiksa status responsnya, kemudian dibaca dalam format JSON dan ditampilkan pada halaman web.
+
+Pada praktikum ini, fungsi untuk mengambil data dipisahkan ke dalam `js/api.js`, sedangkan proses menampilkan data dan mengatur keadaan antarmuka dilakukan di `js/app.js`.
+
+## Fitur
+
+1. Mengambil data dari API menggunakan `fetch()`.
+2. Memeriksa status respons menggunakan `respons.ok` dan `respons.status`.
+3. Membaca data JSON menggunakan `respons.json()`.
+4. Menampilkan data postingan pada halaman web.
+5. Menampilkan keadaan memuat, berhasil, gagal, dan data kosong.
+6. Menangani kesalahan menggunakan `try...catch` dan `throw new Error()`.
+7. Menggunakan `export` dan `import` untuk menghubungkan berkas JavaScript.
+
+## API yang Digunakan
+
+API yang digunakan adalah JSONPlaceholder:
+
+https://jsonplaceholder.typicode.com/posts
+
+API ini menyediakan data contoh berupa postingan yang dapat digunakan untuk latihan mengambil data dari jaringan.
+
+## Struktur Berkas
+
+```text
+P10-25523222/
+├── README.md
+├── profil.html
+├── css/
+└── js/
+    ├── api.js
+    ├── app.js
+    └── dom.js
+```
+
+Struktur di atas menggambarkan berkas utama praktikum. Sesuaikan dengan struktur folder yang sebenarnya jika berbeda.
+
+## Penjelasan Berkas JavaScript
+
+### 1. `js/api.js`
+
+Berkas ini bertugas mengambil data dari API. Alamat API disimpan dalam konstanta `ALAMAT`.
+
+Fungsi `ambilNotisia()` menggunakan `fetch()` untuk meminta data, memeriksa `respons.ok`, membaca JSON, serta menangani kesalahan. Fungsi tersebut diekspor agar dapat digunakan oleh berkas lain.
+
+### 2. `js/app.js`
+
+Berkas ini mengimpor fungsi `ambilNotisia()` dari `api.js`. Data yang diperoleh kemudian ditampilkan sebagai elemen HTML menggunakan `createElement()`, `textContent`, dan `append()`.
+
+Berkas ini juga menangani beberapa keadaan antarmuka, yaitu memuat, berhasil, gagal, dan kosong.
+
+### 3. `js/dom.js`
+
+Berkas ini digunakan pada bagian praktikum DOM sebelumnya, sesuai implementasi proyek.
+
+## Pengujian
+
+Pengujian dilakukan terhadap beberapa keadaan berikut:
+
+| Keadaan | Hasil yang diharapkan |
+|---|---|
+| Berhasil | Data postingan tampil pada halaman. |
+| Gagal | Pesan kegagalan tampil ketika permintaan API gagal. |
+| Kosong | Pesan "Belum ada postingan." tampil ketika data berupa array kosong. |
+| Memuat | Pesan "Memuat data..." tampil selama data sedang diambil. |
+
+Pengujian keadaan gagal dilakukan dengan menggunakan alamat API yang tidak valid. Pengujian keadaan kosong dilakukan dengan menyimulasikan data berupa array kosong.
+
+## Deklarasi Penggunaan AI
+
+Saya menggunakan ChatGPT sebagai alat bantu untuk memahami materi, memeriksa kode, dan membantu menyusun penjelasan serta dokumentasi README.
+
+Bagian yang saya kerjakan sendiri meliputi menjalankan proyek, memeriksa kode, menguji hasil pada browser, dan melakukan perbaikan berdasarkan hasil pengujian. Saya bertanggung jawab untuk memahami dan memeriksa kode yang digunakan dalam tugas ini.
+
+## Kesimpulan
+
+Melalui praktikum ini, saya mempelajari cara mengambil data dari API menggunakan `fetch()`, membaca respons JSON, memeriksa status HTTP, memisahkan fungsi pengambilan data dari proses tampilan, serta menangani keadaan memuat, berhasil, gagal, dan kosong.
+
+Praktikum ini juga membantu saya memahami penggunaan `async`, `await`, `try...catch`, `export`, dan `import` dalam pengembangan aplikasi berbasis web.
