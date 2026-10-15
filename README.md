@@ -486,3 +486,88 @@ Bagian yang saya kerjakan sendiri meliputi menjalankan proyek, memeriksa kode, m
 Melalui praktikum ini, saya mempelajari cara mengambil data dari API menggunakan `fetch()`, membaca respons JSON, memeriksa status HTTP, memisahkan fungsi pengambilan data dari proses tampilan, serta menangani keadaan memuat, berhasil, gagal, dan kosong.
 
 Praktikum ini juga membantu saya memahami penggunaan `async`, `await`, `try...catch`, `export`, dan `import` dalam pengembangan aplikasi berbasis web.
+
+# P11 — Modul, State, dan Penyimpanan Klien
+
+**Mata Kuliah:** Pengembangan Aplikasi Berbasis Web (PABW)  
+**Pertemuan:** 11 — Modul, State, dan Penyimpanan Klien  
+**Nama:** Alfia Syakira Al Amin  
+**NIM:** 25523222  
+**Kelas:** E
+
+## 1. Deskripsi Praktikum
+
+Praktikum Pertemuan 11 membahas pemecahan kode JavaScript menjadi beberapa modul, pemisahan state dari tampilan, serta penyimpanan pilihan pengguna menggunakan `localStorage`.
+
+Proyek ini melanjutkan halaman profil dari pertemuan sebelumnya. Kode dibagi menjadi beberapa berkas agar setiap berkas memiliki tanggung jawab yang jelas dan lebih mudah dipelihara.
+
+## 2. Struktur Berkas
+
+- `profil.html` — halaman profil.
+- `css/` — kumpulan berkas CSS untuk tampilan halaman.
+- `Js/data.js` — menyimpan data karya.
+- `Js/state.js` — mengelola keadaan aplikasi dan perubahan kategori aktif.
+- `Js/dom.js` — membuat kartu karya, menyaring data, dan memperbarui tampilan.
+- `Js/events.js` — menangani interaksi tombol filter dan atur ulang.
+- `Js/storage.js` — menyimpan, membaca, dan menghapus pilihan menggunakan `localStorage`.
+- `Js/app.js` — menghubungkan modul dan menjalankan aplikasi.
+- `Js/api.js` — berkas API dari praktikum sebelumnya, jika masih digunakan.
+- `media/` — menyimpan gambar profil.
+
+## 3. Fitur yang Dikerjakan
+
+1. Memisahkan kode JavaScript menjadi beberapa modul menggunakan `export` dan `import`.
+2. Menyimpan data karya dalam berkas `data.js`.
+3. Mengelola kategori aktif melalui objek `state`.
+4. Menampilkan karya sesuai kategori yang dipilih.
+5. Menggunakan fungsi `render(state)` untuk memperbarui tampilan.
+6. Menyimpan pilihan kategori menggunakan `localStorage`.
+7. Mengubah objek menjadi teks dengan `JSON.stringify()` dan membaca teks dengan `JSON.parse()`.
+8. Menggunakan nilai bawaan `"semua"` ketika belum ada pilihan tersimpan.
+9. Menangani simpanan rusak menggunakan `try/catch` dan memeriksa nomor versi.
+10. Menyediakan tombol untuk mengatur ulang pilihan kategori.
+
+## 4. Penyimpanan dan Penanganan Galat
+
+Penyimpanan menggunakan kunci `pabw-p11` dan nomor versi skema `2`.
+
+Data yang disimpan hanya pilihan kategori aktif. Data dibaca kembali saat halaman dimuat. Jika simpanan rusak atau nomor versinya tidak sesuai, simpanan dihapus dan aplikasi menggunakan nilai bawaan agar halaman tetap dapat dibuka.
+
+Data pribadi seperti kata sandi dan token tidak disimpan di `localStorage`.
+
+## 5. Pengujian
+
+Pengujian dilakukan melalui browser dan Console dengan pemeriksaan berikut:
+
+- Memastikan halaman dapat dibuka tanpa galat impor.
+- Memeriksa perubahan kategori saat tombol filter ditekan.
+- Memeriksa apakah pilihan kategori tetap tersimpan setelah halaman dimuat ulang.
+- Menguji simpanan rusak dengan nilai `bukan-json`.
+- Menguji ketidaksesuaian versi dengan nilai `{}`.
+- Memastikan simpanan yang tidak valid ditangani dan menghasilkan nilai `null` ketika fungsi `muat()` dipanggil setelah simpanan dibuang.
+
+## 6. Deklarasi Penggunaan AI
+
+AI digunakan sebagai alat bantu untuk menjelaskan materi, membantu menemukan kesalahan kode, memberikan saran perbaikan, serta membantu menyusun dokumentasi praktikum.
+
+Bagian yang saya kerjakan sendiri meliputi menjalankan kode di VS Code, menguji halaman melalui browser, memeriksa hasil di Console, mencoba pengujian `localStorage`, dan memeriksa perubahan proyek melalui Git.
+
+Saya bertanggung jawab untuk memahami, memeriksa, dan menyesuaikan kode yang digunakan dalam proyek ini.
+
+## 7. Pekerjaan Rumah Pertemuan 11 — Node.js LTS
+
+Catat hasil pemeriksaan versi dari terminal setelah menjalankan perintah berikut.
+
+| Perintah | Versi yang muncul |
+|---|---|
+| `node -v` | Isi sesuai hasil terminal |
+| `npm -v` | Isi sesuai hasil terminal |
+
+Catatan jika gagal: periksa instalasi Node.js LTS, pastikan PATH sudah benar, lalu tutup dan buka kembali terminal.
+
+## 8. Git
+
+Repositori proyek: https://github.com/allfiy/pabw-praktikum
+
+Perubahan proyek disimpan menggunakan Git dengan perintah `git add`, `git commit`, dan `git push`.
+
