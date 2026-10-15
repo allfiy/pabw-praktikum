@@ -1,6 +1,5 @@
 
-import { ubahPilihanAktif, ambilKaryaTerpilih } from "./state.js";
-import { render, tandaiTombolAktif } from "./dom.js";
+import { pilihKategori } from "./state.js";
 
 export function pasangEventFilter() {
   const barisFilter = document.querySelector("#filter");
@@ -12,8 +11,6 @@ export function pasangEventFilter() {
 
     if (!tombol || !barisFilter.contains(tombol)) return;
 
-    ubahPilihanAktif(tombol.dataset.kategori);
-    tandaiTombolAktif(tombol);
-    render(ambilKaryaTerpilih());
+    pilihKategori(tombol.dataset.kategori);
   });
 }

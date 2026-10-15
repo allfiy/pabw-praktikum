@@ -1,6 +1,4 @@
 
-import { karya } from "./data.js";
-
 const wadah = document.querySelector("#daftar");
 const pesanKosong = document.querySelector("#pesan-kosong");
 
@@ -13,25 +11,45 @@ export function buatKartu(proyek) {
   return kartu;
 }
 
-export function render(daftar = karya) {
+export function saring(state) {
+  if (state.kategoriAktif === "semua") {
+    return state.daftarProyek;
+  }
+
+  return state.daftarProyek.filter(
+    (proyek) =>
+      proyek.kategori.toLowerCase() ===
+      state.kategoriAktif.toLowerCase()
+  );
+}
+
+export function render(state) {
   if (!wadah || !pesanKosong) return;
 
-  wadah.replaceChildren();
+  wadah.textContent = "";
 
-  if (daftar.length === 0) {
+  const tampil = saring(state);
+
+  if (tampil.length === 0) {
     pesanKosong.hidden = false;
     return;
   }
 
   pesanKosong.hidden = true;
 
-  daftar.forEach((proyek) => {
+  tampil.forEach((proyek) => {
     wadah.append(buatKartu(proyek));
   });
+
+  tandaiTombolAktif(state.kategoriAktif);
 }
 
-export function tandaiTombolAktif(tombolAktif) {
+export function tandaiTombolAktif(kategoriAktif) {
   document.querySelectorAll("#filter button").forEach((tombol) => {
-    tombol.classList.toggle("aktif", tombol === tombolAktif);
+    tombol.classList.toggle(
+      "aktif",
+      tombol.dataset.kategori.toLowerCase() ===
+        kategoriAktif.toLowerCase()
+    );
   });
 }

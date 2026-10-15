@@ -1,23 +1,13 @@
 
 import { karya } from "./data.js";
+import { render } from "./dom.js";
 
 export const state = {
-  karya: karya,
-  pilihanAktif: "semua"
+  daftarProyek: karya,
+  kategoriAktif: "semua"
 };
 
-export function ubahPilihanAktif(pilihan) {
-  state.pilihanAktif = pilihan;
-}
-
-export function ambilKaryaTerpilih() {
-  if (state.pilihanAktif === "semua") {
-    return state.karya;
-  }
-
-  return state.karya.filter(
-    (item) =>
-      item.kategori.toLowerCase() ===
-      state.pilihanAktif.toLowerCase()
-  );
+export function pilihKategori(nilai) {
+  state.kategoriAktif = nilai;
+  render(state);
 }
