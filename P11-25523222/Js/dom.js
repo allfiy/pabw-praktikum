@@ -16,28 +16,28 @@ export function saring(state) {
     return state.daftarProyek;
   }
 
-  return state.daftarProyek.filter(
-    (proyek) =>
-      proyek.kategori.toLowerCase() ===
-      state.kategoriAktif.toLowerCase()
+  return state.daftarProyek.filter((proyek) =>
+    proyek.kategori.toLowerCase() ===
+    state.kategoriAktif.toLowerCase()
   );
 }
 
 export function render(state) {
   if (!wadah || !pesanKosong) return;
 
-  wadah.textContent = "";
+  wadah.replaceChildren();
 
-  const tampil = saring(state);
+  const daftarTampil = saring(state);
 
-  if (tampil.length === 0) {
+  if (daftarTampil.length === 0) {
     pesanKosong.hidden = false;
+    tandaiTombolAktif(state.kategoriAktif);
     return;
   }
 
   pesanKosong.hidden = true;
 
-  tampil.forEach((proyek) => {
+  daftarTampil.forEach((proyek) => {
     wadah.append(buatKartu(proyek));
   });
 
@@ -45,11 +45,13 @@ export function render(state) {
 }
 
 export function tandaiTombolAktif(kategoriAktif) {
-  document.querySelectorAll("#filter button").forEach((tombol) => {
-    tombol.classList.toggle(
-      "aktif",
-      tombol.dataset.kategori.toLowerCase() ===
-        kategoriAktif.toLowerCase()
-    );
-  });
+  document
+    .querySelectorAll("#filter button[data-kategori]")
+    .forEach((tombol) => {
+      tombol.classList.toggle(
+        "aktif",
+        tombol.dataset.kategori.toLowerCase() ===
+          kategoriAktif.toLowerCase()
+      );
+    });
 }

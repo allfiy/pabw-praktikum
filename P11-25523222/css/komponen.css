@@ -201,3 +201,36 @@ textarea:user-invalid {
 .pesan-error[hidden] {
   display: none;
 }
+
+/* Perbaikan tampilan bagian karya */
+#karya #filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+#karya #filter button {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+#karya #daftar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 0;
+  padding-left: 24px;
+}
+
+#karya #daftar li {
+  display: list-item;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+#karya #pesan-kosong {
+  margin-top: 12px;
+}
+
