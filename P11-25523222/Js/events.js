@@ -1,5 +1,5 @@
 
-import { state, ubahPilihanAktif, ambilKaryaTerpilih } from "./state.js";
+import { ubahPilihanAktif, ambilKaryaTerpilih } from "./state.js";
 import { render, tandaiTombolAktif } from "./dom.js";
 
 export function pasangEventFilter() {
