@@ -1,0 +1,122 @@
+/* LAYOUT.CSS — Pertemuan 4 & P6 */
+
+/* Layout dasar halaman */
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+}
+
+/* Header */
+.kepala {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+}
+
+/* Navigasi */
+.kepala nav ul {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.kepala nav a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Sidebar responsif */
+.sidebar {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Konten utama */
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: var(--space-lg);
+}
+
+/* Semua section */
+main > section,
+main > article,
+main > aside,
+main > details {
+  width: 100%;
+  min-width: 0;
+  padding: var(--space-lg);
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow-wrap: anywhere;
+}
+
+/* Foto */
+.foto {
+  width: 100%;
+  max-width: 480px;
+  margin: 0;
+}
+
+.foto img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Pembungkus tabel responsif */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Tabel */
+table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  font-weight: bold;
+  text-align: left;
+  padding: var(--space-sm);
+  margin-bottom: var(--space-xs);
+  color: var(--color-primary);
+}
+
+th,
+td {
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Footer */
+.kaki {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-lg);
+  text-align: center;
+}

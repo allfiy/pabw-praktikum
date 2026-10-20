@@ -1,0 +1,145 @@
+/* RESPONSIF.CSS — Pertemuan 6 */
+/* Mobile-first responsive design */
+
+/* Base — Mobile */
+
+main {
+  grid-template-columns: 1fr;
+  width: 100%;
+  max-width: 1200px;
+  padding: var(--space-4);
+}
+
+main > section,
+main > article,
+main > aside,
+main > details {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.sidebar {
+  width: 100%;
+  min-width: 0;
+}
+
+.kartu {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.foto {
+  width: 100%;
+  max-width: 480px;
+}
+
+.foto img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Breakpoint 48rem — 768px */
+
+@media (min-width: 48rem) {
+
+  main {
+    grid-template-columns: 1fr;
+    padding: var(--space-lg);
+  }
+
+  #karya {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  #karya h2 {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Breakpoint 60rem — 960px */
+
+@media (min-width: 60rem) {
+
+  main {
+    grid-template-columns: 16rem minmax(0, 1fr);
+  }
+
+  #tentang,
+  #karya,
+  #kontak,
+  #tanya-jawab,
+  #keterampilan,
+  #lini-masa {
+    grid-column: 2;
+  }
+
+  #karya {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #karya h2 {
+    grid-column: 1 / -1;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}
+
+/* Layar kecil */
+
+@media (max-width: 30rem) {
+
+  .kepala {
+    padding: var(--space-md);
+  }
+
+  main {
+    padding: var(--space-md);
+    gap: var(--space-md);
+  }
+
+  main > section,
+  main > article,
+  main > aside,
+  main > details {
+    padding: var(--space-md);
+  }
+
+  .foto {
+    max-width: 100%;
+  }
+
+  .foto img {
+    max-width: 100%;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+  }
+}
