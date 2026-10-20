@@ -571,3 +571,89 @@ Repositori proyek: https://github.com/allfiy/pabw-praktikum
 
 Perubahan proyek disimpan menggunakan Git dengan perintah `git add`, `git commit`, dan `git push`.
 
+# P12 — Migrasi Profil ke Vue
+
+**Nama:** Alfia Syakira Al Amin  
+**NIM:** 25523222  
+**Mata Kuliah:** Pengembangan Aplikasi Berbasis Web (PABW)  
+**Praktikum:** Pertemuan 12 — Vue, Komponen, dan Build Produksi
+
+## Deskripsi
+
+Proyek ini merupakan pengembangan halaman profil mahasiswa dari JavaScript biasa menjadi aplikasi berbasis Vue menggunakan Vite. Proyek mencakup pemecahan tampilan menjadi beberapa komponen, pengelolaan state reaktif, penyimpanan pilihan kategori menggunakan `localStorage`, serta build untuk produksi.
+
+## Teknologi yang Digunakan
+
+- HTML
+- CSS
+- JavaScript
+- Vue
+- Vite
+- npm
+- localStorage
+
+## Struktur Proyek
+
+```text
+P12-25523222/
+└── worksheet-p12/
+    ├── src/
+    │   ├── components/
+    │   │   ├── KepalaProfil.vue
+    │   │   ├── TombolFilter.vue
+    │   │   ├── DaftarProyek.vue
+    │   │   └── FormKontak.vue
+    │   ├── App.vue
+    │   ├── main.js
+    │   ├── data.js
+    │   ├── state.js
+    │   └── simpanan.js
+    ├── public/
+    ├── index.html
+    ├── package.json
+    └── package-lock.json
+```
+
+## Fitur
+
+1. Menampilkan profil mahasiswa.
+2. Menampilkan daftar proyek.
+3. Memfilter proyek berdasarkan kategori.
+4. Menampilkan formulir kontak.
+5. Menyimpan pilihan kategori menggunakan `localStorage`.
+6. Mengembalikan pilihan kategori ke pengaturan awal melalui tombol reset.
+
+## Cara Menjalankan
+
+Masuk ke folder `worksheet-p12`, kemudian jalankan perintah berikut:
+
+```bash
+npm install
+npm run dev
+```
+
+Buka alamat lokal yang ditampilkan oleh Vite di browser.
+
+## Build Produksi
+
+Untuk membuat hasil build produksi, jalankan:
+
+```bash
+npm run build
+```
+
+Untuk melihat hasil build tersebut, jalankan:
+
+```bash
+npm run preview
+```
+
+Vite akan menghasilkan folder `dist/` yang berisi berkas aplikasi untuk produksi.
+
+## Pernyataan Penggunaan AI
+
+AI digunakan sebagai alat bantu untuk memahami materi, memperbaiki kesalahan kode, dan menyusun dokumentasi. Implementasi, pengujian, dan penyesuaian proyek dilakukan secara bertahap oleh mahasiswa sesuai dengan worksheet praktikum.
+
+## Kesimpulan
+
+Melalui praktikum ini, saya belajar memindahkan halaman profil ke Vue, membagi tampilan menjadi komponen, mengelola state reaktif, menyimpan pilihan pengguna, serta membuat dan menguji build produksi menggunakan Vite.
